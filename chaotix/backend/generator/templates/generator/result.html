@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Images</title>
+</head>
+<body>
+    <h1>Generated Images</h1>
+    {% if error %}
+        <script>alert("{{ error }}");</script>
+    {% endif %}
+    <ul>
+        {% for result in results %}
+            <li>{{ result.get }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,11 @@
+pip install -r requirments.txt
+create env 
+STABILITY_API_KEY=your_stability_api_key
+AWS_ACCESS_KEY_ID=your_aws_access_key_id
+AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
+AWS_STORAGE_BUCKET_NAME=your_bucket_name
+AWS_S3_CUSTOM_DOMAIN=your_bucket_name.s3.amazonaws.com
+sudo service rabbitmq-server/redis -- for scheduling task start
+celery -A project_name worker --loglevel=info
+export $(cat .env | xargs)
+python manage.py runserver

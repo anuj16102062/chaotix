@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Images</title>
+</head>
+<body>
+    <h1>Generate Images</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Generate</button>
+    </form>
+
+    <h2>Generated Images</h2>
+    <ul>
+        {% for image in image_urls %}
+            <li><img src="{{ image.url }}" alt="Generated Image"></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
